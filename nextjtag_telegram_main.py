@@ -1,5 +1,7 @@
 # Standard Import
 import logging
+import time
+import threading
 
 # Telegram Import
 from telegram.ext import CommandHandler
@@ -8,6 +10,7 @@ from telegram.ext import MessageHandler
 from telegram.ext import Updater
 
 # Local Import
+import nextjtag_telegram_report
 import nextjtag_telegram_utils
 CONFIG = nextjtag_telegram_utils.receive_cfg()
 
@@ -27,6 +30,12 @@ def help(bot, update):
 help_handler = CommandHandler('help', help)
 dispatcher.add_handler(help_handler)
 
+# Command: /report
+def report(bot, update):
+    bot.send_message(chat_id=update.message.chat_id, text=nextjtag_telegram_report.report())
+report_handler = CommandHandler('report', report)
+dispatcher.add_handler(report_handler)
+
 # Messages: Any non-command
 def echo(bot, update):
     bot.send_message(chat_id=update.message.chat_id, text="Hi! :)")
@@ -35,3 +44,16 @@ dispatcher.add_handler(echo_handler)
 
 # Start Bot!
 updater.start_polling()
+
+# Hack for ctrl+c on Windows 10 Powershell
+def work():
+    time.sleep(10000)        
+t = threading.Thread(target=work)
+t.daemon = True
+t.start()
+while(True):
+    try:
+        t.join(0.1)
+    except KeyboardInterrupt:
+        updater.stop()
+        exit()
