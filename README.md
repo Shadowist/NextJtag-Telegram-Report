@@ -1,6 +1,8 @@
 # NextJtag-Telegram-Report
 NextJtag reporting through Telegram!
 
+[![041873-C6-2-E19-4709-B02-B-3-EB61-F136-E33.jpg](https://i.postimg.cc/FFk4J4rN/041873-C6-2-E19-4709-B02-B-3-EB61-F136-E33.jpg)](https://postimg.cc/rzTbv7RP)
+
 # Under Construction
 
 This is just a little helper tool to query temperatures and voltages on-the-go.
