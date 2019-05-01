@@ -17,6 +17,8 @@ CONFIG = nextjtag_telegram_utils.receive_cfg()
 updater = Updater(token=CONFIG['token'])
 dispatcher = updater.dispatcher
 
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
 # Command: /start
 def start(bot, update):
     bot.send_message(chat_id=update.message.chat_id, text="Hi! :)")
@@ -30,11 +32,17 @@ def help(bot, update):
 help_handler = CommandHandler('help', help)
 dispatcher.add_handler(help_handler)
 
+# Command: /devices
+def devices(bot, update):
+    bot.send_message(chat_id=update.message.chat_id, text=nextjtag_telegram_report.report("devices"))
+report_devices_handler = CommandHandler('devices', devices)
+dispatcher.add_handler(report_devices_handler)
+
 # Command: /report
 def report(bot, update):
-    bot.send_message(chat_id=update.message.chat_id, text=nextjtag_telegram_report.report())
-report_handler = CommandHandler('report', report)
-dispatcher.add_handler(report_handler)
+    bot.send_message(chat_id=update.message.chat_id, text=nextjtag_telegram_report.report("general"))
+report_general_handler = CommandHandler('report', report)
+dispatcher.add_handler(report_general_handler)
 
 # Messages: Any non-command
 def echo(bot, update):
