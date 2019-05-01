@@ -30,6 +30,10 @@ Installation
 
 # Description
 
+The bot supports two commands:
+- `/devices`: Runs `nextjtag` by itself. Queries all devices.
+- `/report`: Runs `nextjtag -a -t -v`. There's some extra formatting instructions in the script to make it mobile friendly.
+
 This is a little pet project of mine. If it's helpful in anyway, I take beer donations ;)
 
 BTC: 13mjkM59ydce8cuJiBCg2Bn4XxzTUVEEY3
