@@ -1,7 +1,7 @@
 # NextJtag-Telegram-Report
 NextJtag reporting through Telegram!
 
-[![041873-C6-2-E19-4709-B02-B-3-EB61-F136-E33.jpg](https://i.postimg.cc/FFk4J4rN/041873-C6-2-E19-4709-B02-B-3-EB61-F136-E33.jpg)](https://postimg.cc/rzTbv7RP)
+[![D77-DB9-B1-2-C4-E-42-B2-8-A3-E-EBEAD2-DBA949.jpg](https://i.postimg.cc/yxxW0r82/D77-DB9-B1-2-C4-E-42-B2-8-A3-E-EBEAD2-DBA949.jpg)](https://postimg.cc/q6fkTwnG)
 
 # Under Construction
 
