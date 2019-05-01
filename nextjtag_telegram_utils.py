@@ -19,10 +19,9 @@ def show_commands():
     '''Returns a string with the list of commands'''
 
     text = "The following commands are supported:\n"
-    text += "1. /start\n"
-    text += "2. /devices\n"
-    text += "3. /report\n"
-    text += "4. /help\n"
+    text += "1. /devices\n"
+    text += "2. /report\n"
+    text += "3. /help\n"
 
     return text
     
